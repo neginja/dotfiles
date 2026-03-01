@@ -1,0 +1,110 @@
+/* Color Palette */
+@define-color deep-twilight #03045e;
+@define-color french-blue #023e8a;
+@define-color bright-teal-blue #0077b6;
+@define-color blue-green rgba(0, 150, 199, 0.5);
+@define-color turquoise-surf #00b4d8;
+@define-color sky-aqua #48cae4;
+@define-color frosted-blue #90e0ef;
+@define-color frosted-blue-2 #ade8f4;
+@define-color light-cyan #caf0f8;
+@define-color celadon #95d5b2;
+
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @light-cyan;
+}
+
+#mpris,
+#pulseaudio,
+#custom-headset,
+#bluetooth,
+#memory,
+#custom-cpu,
+#custom-gpu,
+#language,
+#network,
+#custom-vpn,
+#tray {
+    background-color: @french-blue;
+    color: @light-cyan;
+    padding: 2px 6px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    border: 1px solid @blue-green;
+}
+
+#mpris.playing {
+    color: @celadon;
+}
+
+#custom-cpu.critical {
+    color: #f7768e;
+}
+
+#workspaces {
+    background-color: @french-blue;
+    color: @light-cyan;
+    padding: 2px 6px;
+    margin: 4px 15px;
+    border-radius: 8px;
+    border: 1px solid @blue-green;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 2px;
+    color: @light-cyan;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: white;
+    background-color: @bright-teal-blue;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background-color: rgba(0, 180, 216, 0.3);
+    color: white;
+}
+
+
+#window label {
+    color: #f49cbb;
+    padding: 2px 20px;
+    margin: 4px;
+    font-style: italic;
+    font-size: 14px;
+}
+
+#clock {
+    background-color: @light-cyan;
+    color: @deep-twilight;
+    padding: 2px 6px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+#custom-power {
+    background-color: #f7768e;
+    color: @deep-twilight;
+    padding: 2px 12px;
+    margin: 4px 8px 4px 3px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#tray {
+    padding: 2px 8px;
+}

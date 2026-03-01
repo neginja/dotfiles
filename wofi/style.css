@@ -1,0 +1,53 @@
+@define-color ink-black #0d1b2a;
+@define-color prussian-blue #1b263b;
+@define-color dusk-blue #415a77;
+@define-color dusty-denim #778da9;
+@define-color alabaster-grey #e0e1dd;
+
+window {
+    margin: 0px;
+    background-color: @ink-black;
+    border: 1px solid @dusk-blue;
+    border-radius: 8px;
+    font-family: "FontAwesome, Roboto, Helvetica, Arial, sans-serif";
+    font-size: 14px;
+}
+
+#outer-box {
+    margin: 10px;
+    background-color: transparent;
+}
+
+#input {
+    margin: 10px;
+    border: 1px solid @dusk-blue;
+    border-radius: 8px;
+    background-color: @prussian-blue;
+    color: @alabaster-grey;
+    padding: 8px;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: transparent;
+}
+
+#text {
+    margin: 5px;
+    color: @dusty-denim;
+    font-weight: bolder;
+}
+
+#entry:selected {
+    background-color: @dusk-blue;
+    border-radius: 8px;
+    outline: none;
+}
+
+#entry:selected #text {
+    color: @alabaster-grey;
+}
+
+#scroll {
+    margin: 5px;
+}

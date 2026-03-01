@@ -1,0 +1,7 @@
+show=drun
+width=600
+height=400
+insensitive=true
+always_parse_args=true
+allow_images=true
+image_size=32

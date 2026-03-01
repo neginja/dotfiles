@@ -1,0 +1,168 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "mpris",
+        "pulseaudio",
+        "custom/headset",
+        "bluetooth",
+        "memory",
+        "custom/cpu",
+        "custom/gpu",
+        "hyprland/language",
+        "network",
+        "custom/vpn",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/wofi/powermenu.sh"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%Y/%m/%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "󰌌  US",
+        "format-fr": "󰌌  CH",
+        "keyboard-name": "cherry-cherry-usb-keyboard", // Use the name from hyprctl devices
+        "on-click": "hyprctl switchxkblayout cherry-cherry-usb-keyboard next"
+    },
+    "network": {
+        "interface": "enp8s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", // hide .
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)  - 󰛃  {bandwidthUpBits} 󰛀  {bandwidthDownBits}",
+        "tooltip-format-ethernet": "󰛃  {bandwidthUpBits} 󰛀  {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+    "custom/vpn": {
+        "exec": "~/.config/waybar/custom/vpn.sh",
+        "return-type": "json",
+        "interval": 15,
+        "format": "VPN {icon}  {text}",
+        "format-icons": {
+            "on": "󰒘", // Full shield
+            "locked": "󰦝", // Shield with lock
+            "off": "" // Empty/Crossed shield
+        },
+        "tooltip": false
+    },
+    "custom/cpu": {
+        "exec": "~/.config/waybar/custom/cpu.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format": "{}",
+        "on-click": "alacritty --class floating-monitor -e htop"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "  {percentage}%",
+        "tooltip-format": "Used: {used:0.1f}GiB\nFree: {avail:0.1f}GiB\nTotal: {total:0.1f}GiB",
+        "on-click": "alacritty --class floating-monitor -e htop"
+    },
+    "custom/gpu": {
+        "exec": "~/.config/waybar/custom/gpu.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format": "󰢮  {}",
+        "on-click": "alacritty --class floating-monitor -e watch nvidia-smi"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "format-off": "",
+        "format-disabled": "",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    "custom/headset": {
+        "exec": "~/.config/waybar/custom/headset.sh",
+        "return-type": "json",
+        "interval": 10,
+        "format": "{text}",
+        "tooltip": true
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2.5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2.5%",
+        "scroll-step": 1
+    },
+    "mpris": {
+        "format": "{status_icon}  {title} - {artist}",
+        "format-paused": "{status_icon}  <i>{title} - {artist}</i>",
+        "max-length": 45, // Truncates the name
+        "player-icons": {
+            "default": "▶",
+            "spotify": "",
+            "vlc": "󰕼",
+            "firefox": "",
+            "brave": ""
+        },
+        "status-icons": {
+            "playing": "",
+            "paused": ""
+        },
+        // The specific actions you requested
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "tooltip-format": "{player} ({status})\n{artist} - {title}\n{album}"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "DP-1": [
+                1,
+                2,
+                3
+            ],
+            "HDMI-A-1": [
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 45
+    }
+}

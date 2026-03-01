@@ -1,0 +1,9 @@
+width=200
+lines=5 # because of margin/padding in css
+location=top_right
+xoffset=-20
+yoffset=20
+hide_search=true
+hide_scroll=true
+key_exit=Escape
+dynamic_lines=false
