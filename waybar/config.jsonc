@@ -127,13 +127,6 @@
         "format": "{status_icon}  {title} - {artist}",
         "format-paused": "{status_icon}  <i>{title} - {artist}</i>",
         "max-length": 45, // Truncates the name
-        "player-icons": {
-            "default": "▶",
-            "spotify": "",
-            "vlc": "󰕼",
-            "firefox": "",
-            "brave": ""
-        },
         "status-icons": {
             "playing": "",
             "paused": ""

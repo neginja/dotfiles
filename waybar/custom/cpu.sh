@@ -1,7 +1,6 @@
 #!/bin/bash
 
-core_count=$(nproc)
-cpu_utilization_avg=$(echo "$cpu_utilization" | awk '{printf "%.2f", $1}')
+cpu_utilization_avg=$(grep '^cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5); printf "%.2f", usage}')
 temperature_avg=$(($(cat /sys/class/hwmon/hwmon3/temp1_input) / 1000))
 tooltip=$(grep '^cpu[0-9]' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5); printf "Core %d: %.0f%%\\n", NR-1, usage}')
 
