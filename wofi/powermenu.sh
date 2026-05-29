@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 conf_file=~/.config/wofi/powermenu
-style_file=~/.config/wofi/style.css
+style_file=~/.config/wofi/powermenu.css
 options="  Shutdown\n  Reboot\n󰤄  Sleep\n󰍃  Logout"
 choice=$(echo -e "$options" | wofi --dmenu --conf $conf_file --style $style_file)
 
