@@ -15,7 +15,7 @@ hl.bind("CTRL + SHIFT + M", hl.dsp.exec_cmd(pv.powermenu))
 
 -- --- Window Manipulation ---
 -- Swapping windows
-hl.bind(hyper .. " + up", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(hyper .. " + bracketleft", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(hyper .. " + bracketright", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(hyper .. " + equal", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(hyper .. " + apostrophe", hl.dsp.window.swap({ direction = "down" }))

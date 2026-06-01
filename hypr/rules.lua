@@ -45,17 +45,6 @@ hl.window_rule({
 })
 
 
-hl.window_rule({
-    name         = "alttab-behavior",
-    match        = {
-        class = "alttab",
-    },
-    no_anim      = true,
-    stay_focused = true,
-    workspace    = "special:alttab",
-    border_size  = 0
-})
-
 -- Steam games
 hl.window_rule({
     name             = "steam-games",
