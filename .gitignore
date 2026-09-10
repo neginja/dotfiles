@@ -1,1 +1,3 @@
 apps.conf
+apps.lua
+priv_vars.lua

@@ -36,7 +36,7 @@ window#waybar {
     color: @light-cyan;
     padding: 2px 6px;
     margin: 4px 2px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid @blue-green;
 }
 
@@ -53,7 +53,7 @@ window#waybar {
     color: @light-cyan;
     padding: 2px 6px;
     margin: 4px 15px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid @blue-green;
 }
 
@@ -61,13 +61,14 @@ window#waybar {
     padding: 0 5px;
     margin: 0 2px;
     color: @light-cyan;
+    border-radius: 5px;
     background: transparent;
 }
 
 #workspaces button.active {
     color: white;
     background-color: @bright-teal-blue;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 #workspaces button:hover {
@@ -89,7 +90,7 @@ window#waybar {
     color: @deep-twilight;
     padding: 2px 6px;
     margin: 4px 2px;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 #custom-power {
@@ -97,7 +98,7 @@ window#waybar {
     color: @deep-twilight;
     padding: 2px 12px;
     margin: 4px 8px 4px 3px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
 }
 
@@ -106,5 +107,5 @@ window#waybar.empty #window {
 }
 
 #tray {
-    padding: 2px 8px;
+    padding: 2px 5px;
 }

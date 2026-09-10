@@ -20,6 +20,6 @@ case "$choice" in
         systemctl suspend
         ;;
     *Logout)
-        [[ $(confirm_exit) == *"Yes"* ]] && hyprctl dispatch exit
+        [[ $(confirm_exit) == *"Yes"* ]] && hyprctl dispatch "hl.dsp.exit()"
         ;;
 esac
