@@ -85,45 +85,11 @@ hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-"), { locked = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 
--- bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
--- bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
--- bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
-
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-
--- --- AltTab behavior ---
-
---https://wiki.hypr.land/Configuring/Uncommon-tips--tricks/#alt-tab-behaviour
--- hl.bind("ALT + TAB", hl.dsp.exec_cmd("local_var_HOME/.config/hypr/scripts/alttab/enable.sh 'down'"))
--- hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("local_var_HOME/.config/hypr/scripts/alttab/enable.sh 'up'"))
--- hl.define_submap("alttab", function()
--- hl.bind("ALT + tab", hl.dsp.send_shortcut("", "tab", "class:alttab"))
--- hl.bind("ALT + SHIFT + tab", hl.dsp.send_shortcut("shift", "tab", "class:alttab"))
--- hl.bind("ALT + ALT_L",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,return,class:alttab"),
--- { repeating = true, transparent = true })
--- hl.bind("ALT + SHIFT + ALT_L",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,return,class:alttab"),
--- { repeating = true, transparent = true })
--- hl.bind("ALT + Return",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,return,class:alttab"))
--- hl.bind("ALT + SHIFT + Return",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,return,class:alttab"))
--- hl.bind("ALT + escape",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,escape,class:alttab"))
--- hl.bind("ALT + SHIFT + escape",
--- hl.dsp.exec_cmd(
--- "local_var_HOME/.config/hypr/scripts/alttab/disable.sh ; hyprctl -q dispatch sendshortcut,escape,class:alttab"))
--- end)
 
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next"))
 hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("snappy-switcher prev"))
